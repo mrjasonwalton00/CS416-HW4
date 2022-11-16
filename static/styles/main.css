@@ -1,0 +1,10 @@
+#tasks {
+    background-color: green;
+}
+
+
+
+#tasks-box.container {
+    background-color:red;
+    padding: 10px;
+}
