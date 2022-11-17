@@ -6,3 +6,9 @@ def toDoList(request):
 
 def page2(request):
     return render(request, 'toDoList/page2.html')
+
+def page1(request):
+    return render(request, 'toDoList/page1.html')
+
+def page3(request):
+    return render(request, 'toDoList/page3.html')
