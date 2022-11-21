@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+
+<div class="container">
+    <div class="row m-5">
+      <div class="col">
+        <div class="card">
+            <div class="card-header">
+              Update Task
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Task name</h5>
+
+              <form method = "POST" action="">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Submit">
+              </form>
+              
+             
+            </div>
+          </div>
+      </div>
+    </div> 
+</div>
+
+<div class="container">
+    <div class="row m-5">
+      <div class="col">
+        <button type="button" class="btn btn-warning"><a href="{% url 'tasks' %}"> Go back </a></button>
+      </div>
+    </div> 
+</div>
+
+
+
+
+{% endblock content %}
