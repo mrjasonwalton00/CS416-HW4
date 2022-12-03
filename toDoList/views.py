@@ -6,7 +6,6 @@ from django.urls import reverse_lazy
 from .models import Task
 
 
-
 #shows list of tasks on landing page
 class TaskList(ListView):
     model = Task
@@ -24,14 +23,11 @@ class TaskList(ListView):
         return context
 
 
-
-
-    
 #shows specific task on dummy page
 class TaskDetail(DetailView):
     model = Task
     context_object_name = 'task'
-    template_name = 'toDoList/dummy.html'
+    
 
 #adds a task on add page
 class TaskCreate(CreateView):
@@ -39,6 +35,7 @@ class TaskCreate(CreateView):
     fields = '__all__'
     success_url = reverse_lazy('tasks')
     template_name = 'toDoList/add.html'
+
 
 #delete task on landing page
 class DeleteView(DeleteView):
@@ -51,6 +48,12 @@ class TaskUpdate(UpdateView):
     fields = '__all__'
     success_url = reverse_lazy('tasks')
     template_name = 'toDoList/update.html'
+
+
+
+
+
+
     
 
 #def index(request):

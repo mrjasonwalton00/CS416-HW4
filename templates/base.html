@@ -1,3 +1,6 @@
+<!-- Parent HTML file all other HTML files extends from this -->
+<!-- Includes Bootstrap link, CSS Style sheet, Bootstrap icons -->
+
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
@@ -12,7 +15,7 @@
 </head>
 <body>
     
-
+<!-- To Do List Header -->
     <div class="container text-center">
         <div class="row m-5">
           <div class="col">
@@ -22,14 +25,9 @@
     </div>
 
 
-
-
-
     {% block content %}
 
-
     <!-- children sit here -->
-
 
     {% endblock content %}
 

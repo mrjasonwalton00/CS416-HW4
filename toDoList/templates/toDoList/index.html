@@ -5,96 +5,79 @@
 
 
 <div class="container text-center">
-    <div class="row m-5">
+    <div class="row mx-5 my-3">
       <div class="col">
 
-        
-
-
-        <form  id = "form1" method="GET">
-          <input type="text" name="search-area" value="{{search_input}}">
-          <input type="submit" value="Search">
+        <!-- Search Form -->
+        <form method="GET"> 
+            <div class=" input-group mb-1">
+              <input name="search-area" value="{{search_input}}" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Search tasks">
+              <button type="search" class="btn btn-primary"><i class="bi bi-search"></i>  Search  </button>
+            </div>
         </form>
-
-
-
-        
 
 
       </div>
     </div> 
 </div>
-
-
-
 
 
 
 {% for task in tasks %}
+
+<!-- Container for Tasks -->
   <div class="container">
       <div class="row mx-5 my-3">
         <div class="col">
           <div class="card shadow">
-            
+
+            <!-- Beginning of row -->
             <div class="row">
 
+              <!-- Shows Task Name -->
               <div class="col-12 col-md-8 col-lg-10">
                 <div class="card-body">
                   <h5 class="card-title">{{task.title}}</h5>
-                  <p> created today </p>
                 </div>
               </div>
 
-              <div class="col-12 col-md-4 col-lg-2">
+              <!-- Update and Delete Buttons -->
+              <div class="col-12 col-md-4 col-lg-2" style="text-align: end;">
                 <div class="card-body">
                   <a href="{% url 'task-update' task.id %}" class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i></a>
-                  
-                  
-                  
-                  
-                  <form style="display: inline;"  method = "POST" action="{% url 'task-delete' task.id %}" id="form1">
-                    {% csrf_token %} 
-                    <button type = "submit" class = "btn btn-outline-danger"><i class="bi bi-x-lg"></i></button>
-                  </form>
-
-                  
+                               
+                    <form style="display:inline"  method = "POST" action="{% url 'task-delete' task.id %}" id="form1">
+                      {% csrf_token %} 
+                      <button type = "submit" class = "btn btn-outline-danger"><i class="bi bi-x-lg"></i></button>
+                    </form>
 
                 </div>
               </div>
 
-            </div>
-            
+            </div> 
+            <!-- End of Row -->
 
             
             
 
-            </div>
           </div>
         </div>
-      </div> 
+      </div>
+    </div> 
 
 
 
-      
-
-
-
-  </div>
+  
 {% endfor %}
 
+<!-- Add new Task Button -->
 <div class="container">
-    <div class="row m-5">
+    <div class="row mx-5 my-4">
       <div class="col">
-        <p> <a href="{% url 'task-create' %}" class="btn btn-success"> <span> <i class="bi bi-plus fa-lg"></i> </span> Add a new task </a> </p>
+        <p> <a href="{% url 'task-create' %}" class="btn btn-success"> <span> <i class="bi bi-plus fa-lg"></i>  </span> Add a new task </a> </p>
       </div>
     </div> 
 </div>
-
-
-
-
-
-
 
 
 {% endblock content %}
